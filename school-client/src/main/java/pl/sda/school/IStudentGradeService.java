@@ -1,6 +1,7 @@
-package pl.sda.school.service;
+package pl.sda.school;
 
-import pl.sda.school.model.StudentGrade;
+
+import pl.sda.model.StudentGrade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,4 +17,6 @@ public interface IStudentGradeService {
         studentGrades.add(studentGrade);
         return studentGrades;
     }
+
+    default void save(StudentGrade studentGrade){};
 }

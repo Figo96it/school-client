@@ -1,4 +1,4 @@
-package pl.sda.school.service;
+package pl.sda.school;
 
 import org.springframework.stereotype.Service;
 
