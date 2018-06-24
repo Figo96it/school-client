@@ -28,13 +28,17 @@
             <th scope="col">ID</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
+            <th scope="col">Position</th>
+            <th scope="col">ID Class</th>
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="studentGrade : ${studentGrades}">
-            <td th:text="${studentGrade.id}"></td>
-            <td th:text="${studentGrade.idStudent}"></td>
-            <td th:text="${studentGrade.idGrade}"></td>
+        <tr scope="row" th:each="employee : ${employees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.position}"></td>
+            <td th:text="${employee.classId}"></td>
         </tr>
         </tbody>
     </table>

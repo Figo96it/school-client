@@ -1,4 +1,4 @@
-package pl.sda.school;
+package pl.sda.school.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +18,7 @@ public class SchoolStudentsGradesController {
 
     @RequestMapping("students/grades/lists")
     public String listStudentsGradesView(Model model){
-        model.addAttribute("studentGrade", studentGradeService.findAll());
+        model.addAttribute("studentGrades", studentGradeService.findAll());
         return "studentsGradesList";
     }
 }

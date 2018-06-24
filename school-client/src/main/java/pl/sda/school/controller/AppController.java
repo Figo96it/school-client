@@ -1,4 +1,4 @@
-package pl.sda;
+package pl.sda.school.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
