@@ -11,13 +11,13 @@ import pl.sda.model.Plan;
 import pl.sda.school.iservice.IPlanService;
 
 @Controller
-public class SchoolPlanController {
+public class PlanController {
 
 
     private IPlanService planService;
 
     @Autowired
-    public SchoolPlanController(IPlanService planService) {
+    public PlanController(IPlanService planService) {
         this.planService = planService;
     }
 

@@ -13,12 +13,12 @@ import pl.sda.school.iservice.IParentService;
 import java.util.List;
 
 @Controller
-public class SchoolParentsController {
+public class ParentsController {
 
     private IParentService parentService;
 
     @Autowired
-    public SchoolParentsController(IParentService parentsService) {
+    public ParentsController(IParentService parentsService) {
         this.parentService = parentsService;
     }
 

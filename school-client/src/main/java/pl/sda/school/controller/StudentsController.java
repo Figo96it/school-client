@@ -10,12 +10,12 @@ import pl.sda.school.iservice.IStudentService;
 import java.util.List;
 
 @Controller
-public class SchoolStudentsController {
+public class StudentsController {
 
     private IStudentService studentService;
 
     @Autowired
-    public SchoolStudentsController(IStudentService studentService) {
+    public StudentsController(IStudentService studentService) {
         this.studentService = studentService;
     }
 

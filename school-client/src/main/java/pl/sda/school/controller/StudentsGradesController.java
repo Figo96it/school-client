@@ -13,12 +13,12 @@ import pl.sda.school.iservice.IStudentGradeService;
 import java.util.List;
 
 @Controller
-public class SchoolStudentsGradesController {
+public class StudentsGradesController {
 
     private IStudentGradeService studentGradeService;
 
     @Autowired
-    public SchoolStudentsGradesController(IStudentGradeService studentGradeService) {
+    public StudentsGradesController(IStudentGradeService studentGradeService) {
         this.studentGradeService = studentGradeService;
     }
 
@@ -39,4 +39,5 @@ public class SchoolStudentsGradesController {
         model.addAttribute("studentGrade", new StudentGrade());
         return "addStudentGrade";
     }
+
 }

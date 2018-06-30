@@ -10,15 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.model.Employee;
 import pl.sda.school.iservice.IEmployeeService;
 
-import java.util.List;
 
 @Controller
-public class SchoolEmployeesController {
+public class EmployeesController {
 
     private IEmployeeService employeeService;
 
     @Autowired
-    public SchoolEmployeesController(IEmployeeService employeeService) {
+    public EmployeesController(IEmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
