@@ -8,16 +8,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.model.Classroom;
-import pl.sda.model.Student;
 import pl.sda.school.iservice.IClassService;
 
 @Controller
-public class SchoolClassController {
+public class ClassController {
 
     private IClassService classService;
 
     @Autowired
-    public SchoolClassController(IClassService classService) {
+    public ClassController(IClassService classService) {
         this.classService = classService;
     }
 
