@@ -14,5 +14,4 @@ public class AppTest extends TestCase {
     public void contextTest() {
 
     }
-
 }
