@@ -34,7 +34,6 @@ public class SchoolStudentsGradesController {
         return "redirect:/";
     }
 
-
     @GetMapping("student/grade/add")
     public String addStudentGradeView(Model model) {
         model.addAttribute("studentGrade", new StudentGrade());
