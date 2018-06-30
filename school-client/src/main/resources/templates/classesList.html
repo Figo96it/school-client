@@ -7,7 +7,7 @@
     <meta charset="utf-8" name="viewport” content=“width=device-width, initial-scale=1"/>
 
     <link rel="stylesheet" type="text/css"
-          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
     <!--<link rel="stylesheet" th:href="@{/css/main.css}"-->
     <!--href="../aaa/main.css"/>-->
@@ -47,12 +47,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="class : ${classes}">
+        <tr scope="row" th:each="class : ${classroom}">
             <td th:text="${class.id}"></td>
             <td th:text="${class.idSchool}"></td>
             <td th:text="${class.className}"></td>
             <td th:text="${class.year}"></td>
-            <td th:text="${class.idFormTutor}"></td>
+            <td th:text="${class.formTutor}"></td>
         </tr>
         </tbody>
     </table>
