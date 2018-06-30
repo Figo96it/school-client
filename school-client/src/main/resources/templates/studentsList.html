@@ -2,13 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Spring Boot Thymeleaf Hello World Example</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+    <meta charset="utf-8" name="viewport” content=“width=device-width, initial-scale=1"/>
 
     <link rel="stylesheet" type="text/css"
-          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
-    <link rel="stylesheet" th:href="@{/css/main.css}"
-          href="../../css/main.css" />
+    <!--<link rel="stylesheet" th:href="@{/css/main.css}"-->
+    <!--href="../aaa/main.css"/>-->
+
+    <script type="text/javascript"
+            src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -26,65 +35,24 @@
         </div>
     </div>
 </nav>
-
 <div class="container">
-
-    <div class="starter-template">
-        <h1>Spring Boot Web Thymeleaf Example</h1>
-        <h2>
-            <span th:text="'Message: ' + ${message}"></span>
-        </h2>
-    </div>
-
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr scope="row" th:each="student : ${students}">
+            <td th:text="*{student.studentId}"></td>
+            <td th:text="*{student.firstName}"></td>
+            <td th:text="${student.lastName}"></td>
+            <td th:text="${student.classroom}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<!-- /.container -->
-
-<script type="text/javascript"
-        src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </body>
 </html>
-
-<!--<!DOCTYPE HTML>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-    <!--<title>Spring Boot Thymeleaf Hello World Example</title>-->
-
-
-    <!--<meta charset="utf-8" name="viewport” content=“width=device-width, initial-scale=1"/>-->
-
-    <!--<link rel="stylesheet" type="text/css"-->
-          <!--href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>-->
-
-    <!--&lt;!&ndash;<link rel="stylesheet" th:href="@{/css/main.css}"&ndash;&gt;-->
-    <!--&lt;!&ndash;href="../aaa/main.css"/>&ndash;&gt;-->
-
-    <!--<script type="text/javascript"-->
-            <!--src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-
-
-    <!--<script src="webjars/jquery/3.1.1/jquery.min.js"></script>-->
-
-
-<!--</head>-->
-<!--<body>-->
-<!--<div class="container">-->
-    <!--<table class="table">-->
-        <!--<thead class="thead-dark">-->
-        <!--<tr>-->
-            <!--<th scope="col">ID</th>-->
-            <!--<th scope="col">First Name</th>-->
-            <!--<th scope="col">Last Name</th>-->
-        <!--</tr>-->
-        <!--</thead>-->
-        <!--<tbody>-->
-        <!--<tr scope="row" th:each="student : ${students}">-->
-            <!--<td th:text="${student.id}"></td>-->
-            <!--<td th:text="${student.firstName}"></td>-->
-            <!--<td th:text="${student.lastName}"></td>-->
-        <!--</tr>-->
-        <!--</tbody>-->
-    <!--</table>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->

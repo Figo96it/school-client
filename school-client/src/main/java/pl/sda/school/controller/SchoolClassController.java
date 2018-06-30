@@ -1,10 +1,10 @@
-package pl.sda;
+package pl.sda.school.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.sda.school.IClassService;
+import pl.sda.school.iservice.IClassService;
 
 @Controller
 public class SchoolClassController {

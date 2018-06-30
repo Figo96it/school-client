@@ -1,6 +1,9 @@
-package pl.sda.school;
+package pl.sda.school.iservice;
 
 
+import pl.sda.model.Classroom;
+import pl.sda.model.Grade;
+import pl.sda.model.Student;
 import pl.sda.model.StudentGrade;
 
 import java.util.ArrayList;
@@ -11,8 +14,8 @@ public interface IStudentGradeService {
     default List<StudentGrade> findAll(){
         StudentGrade studentGrade=new StudentGrade();
         studentGrade.setId(4);
-        studentGrade.setIdGrade(5);
-        studentGrade.setIdStudent(3);
+        studentGrade.setGrade(new Grade());
+        studentGrade.setStudent(new Student());
         List<StudentGrade> studentGrades=new ArrayList<>();
         studentGrades.add(studentGrade);
         return studentGrades;

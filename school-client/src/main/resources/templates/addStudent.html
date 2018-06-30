@@ -54,6 +54,11 @@
                 <label th:for="lastName" th:text="LastName"></label>
                 <input type="text" th:class="form-control" th:id="lastName" th:name="LastName" th:field="*{lastName}" />
             </div>
+              <div th:align="center">
+                  <a th:href="@{~/students/list}">
+                      <button type="button" class="btn btn-outline-secondary">Add Student</button>
+                   </a>
+              </div>
     </form>
 </div>
 

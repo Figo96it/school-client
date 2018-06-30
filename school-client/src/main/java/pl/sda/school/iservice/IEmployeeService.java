@@ -1,5 +1,6 @@
-package pl.sda.school;
+package pl.sda.school.iservice;
 
+import pl.sda.model.Classroom;
 import pl.sda.model.Employee;
 
 import java.util.ArrayList;
@@ -9,19 +10,13 @@ public interface IEmployeeService {
     default List<Employee> findAll(){
         Employee employee=new Employee();
         Employee employee2=new Employee();
-        employee.setId((long)3);
+        employee.setId(3);
         employee.setFirstName("Kamil");
         employee.setLastName("Urbaniak");
         employee.setPosition("Director");
-        employee.setClassId((long)4);
-        employee2.setId((long)1);
-        employee2.setFirstName("Adam");
-        employee2.setLastName("Kowalski");
-        employee2.setPosition("Teacher");
-        employee2.setClassId((long) 1);
+        employee.setClassroom(new Classroom());
         List<Employee> employees=new ArrayList<>();
         employees.add(employee);
-        employees.add(employee2);
         return employees;
     }
 

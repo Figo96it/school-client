@@ -5,23 +5,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <link rel="stylesheet" type="text/css"
-          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
     <link rel="stylesheet" th:href="@{/css/main.css}"
           href="../../css/main.css" />
-
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Spring Boot</a>
+            <a class="navbar-brand" th:href="@{welcome}">School</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="@{welcome}">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#login">Log in</a></li>
             </ul>
         </div>
     </div>
@@ -29,18 +29,42 @@
 
 <div class="container">
 
-    <div class="starter-template">
+    <div th:class="starter-template">
         <h1>Spring Boot Web Thymeleaf Example</h1>
         <h2>
             <span th:text="'Message: ' + ${message}"></span>
         </h2>
     </div>
 
+    <ul class="list-unstyled">
+        <li class="media">
+            <img class="mr-3" th:src="@{/images/Galeria1.jpg}" alt="Generic placeholder image">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">List-based media object</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+        </li>
+        <li class="media my-4">
+            <img class="mr-3" src=".../64x64" alt="Generic placeholder image">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">List-based media object</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+        </li>
+        <li class="media">
+            <img class="mr-3" src=".../64x64" alt="Generic placeholder image">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">List-based media object</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+        </li>
+    </ul>
+
 </div>
 <!-- /.container -->
 
 <script type="text/javascript"
-        src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
 
 </body>
 </html>

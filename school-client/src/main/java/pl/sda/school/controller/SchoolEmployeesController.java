@@ -1,4 +1,4 @@
-package pl.sda;
+package pl.sda.school.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.model.Employee;
-import pl.sda.school.IEmployeeService;
+import pl.sda.school.iservice.IEmployeeService;
 
 import java.util.List;
 
@@ -37,8 +37,8 @@ public class SchoolEmployeesController {
     @GetMapping("employee/add")
     public String addStudentView(Model model) {
         //todo uzyj studentservic
-        List<Employee> employees=employeeService.findAll();
-        model.addAttribute("employee", employees);
+//        List<Employee> employees=employeeService.findAll();
+//        model.addAttribute("employee", employees);
         model.addAttribute("employee",new Employee());
         return "addEmployee";
     }
