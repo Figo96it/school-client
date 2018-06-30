@@ -11,17 +11,17 @@ import java.util.List;
 
 public interface IStudentGradeService {
 
-    default List<StudentGrade> findAll(){
-        StudentGrade studentGrade=new StudentGrade();
+    default List<StudentGrade> findAll() {
+        StudentGrade studentGrade = new StudentGrade();
         studentGrade.setId(4);
         studentGrade.setGrade(new Grade());
         studentGrade.setStudent(new Student());
-        List<StudentGrade> studentGrades=new ArrayList<>();
+        List<StudentGrade> studentGrades = new ArrayList<>();
         studentGrades.add(studentGrade);
         return studentGrades;
     }
 
-    default void save(StudentGrade studentGrade){
+    default void save(StudentGrade studentGrade) {
         //todo dodanie oceny do repozytorium
     }
 }

@@ -23,7 +23,7 @@ public class SchoolEmployeesController {
     }
 
     @RequestMapping("employees/list")
-    public String listStudentsGradesView(Model model){
+    public String listStudentsGradesView(Model model) {
         model.addAttribute("employees", employeeService.findAll());
         return "employeesList";
     }
@@ -36,7 +36,7 @@ public class SchoolEmployeesController {
 
     @GetMapping("employee/add")
     public String addStudentView(Model model) {
-        model.addAttribute("employee",new Employee());
+        model.addAttribute("employee", new Employee());
         return "addEmployee";
     }
 }

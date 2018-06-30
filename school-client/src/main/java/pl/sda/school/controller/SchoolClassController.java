@@ -22,7 +22,7 @@ public class SchoolClassController {
     }
 
     @RequestMapping("classes/list")
-    public String listStudentsGradesView(Model model){
+    public String listStudentsGradesView(Model model) {
         model.addAttribute("classes", classService.findAll());
         return "classesList";
     }

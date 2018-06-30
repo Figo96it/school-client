@@ -17,7 +17,7 @@ public interface IClassService {
         return classes;
     }
 
-    default void save(Classroom Classroom){
+    default void save(Classroom Classroom) {
         //todo dodanie klasy do repozytorium
     }
 }

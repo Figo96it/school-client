@@ -23,7 +23,7 @@ public class SchoolStudentsGradesController {
     }
 
     @RequestMapping("students/grades/lists")
-    public String listStudentsGradesView(Model model){
+    public String listStudentsGradesView(Model model) {
         model.addAttribute("studentGrades", studentGradeService.findAll());
         return "studentsGradesList";
     }
@@ -34,9 +34,10 @@ public class SchoolStudentsGradesController {
         return "redirect:/";
     }
 
+
     @GetMapping("student/grade/add")
     public String addStudentGradeView(Model model) {
-        model.addAttribute("studentGrade",new StudentGrade());
+        model.addAttribute("studentGrade", new StudentGrade());
         return "addStudentGrade";
     }
 }

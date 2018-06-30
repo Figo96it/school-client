@@ -20,7 +20,7 @@ public class SchoolStudentsController {
     }
 
     @RequestMapping("students/list")
-    public String listStudentsView(Model model){
+    public String listStudentsView(Model model) {
         model.addAttribute("students", studentService.findAll());
         return "studentsList";
     }

@@ -23,7 +23,7 @@ public class SchoolParentsController {
     }
 
     @RequestMapping("parents/list")
-    public String listParentsView(Model model){
+    public String listParentsView(Model model) {
         model.addAttribute("parents", parentService.findAll());
         return "parentsList";
     }
@@ -36,7 +36,7 @@ public class SchoolParentsController {
 
     @GetMapping("parent/add")
     public String addStudentView(Model model) {
-        model.addAttribute("parent",new Parent());
+        model.addAttribute("parent", new Parent());
         return "addParent";
     }
 
