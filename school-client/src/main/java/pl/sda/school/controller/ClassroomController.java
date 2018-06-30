@@ -11,12 +11,12 @@ import pl.sda.model.Classroom;
 import pl.sda.school.iservice.IClassService;
 
 @Controller
-public class ClassController {
+public class ClassroomController {
 
     private IClassService classService;
 
     @Autowired
-    public ClassController(IClassService classService) {
+    public ClassroomController(IClassService classService) {
         this.classService = classService;
     }
 

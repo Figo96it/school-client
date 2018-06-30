@@ -21,7 +21,5 @@ public interface IStudentGradeService {
         return studentGrades;
     }
 
-    default void save(StudentGrade studentGrade) {
-        //todo dodanie oceny do repozytorium
-    }
+    void save(StudentGrade studentGrade);
 }

@@ -7,20 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface IEmployeeService {
-    default List<Employee> findAll(){
-        Employee employee=new Employee();
-        Employee employee2=new Employee();
+    default List<Employee> findAll() {
+        Employee employee = new Employee();
         employee.setId(3);
         employee.setFirstName("Kamil");
         employee.setLastName("Urbaniak");
         employee.setPosition("Director");
         employee.setClassroom(new Classroom());
-        List<Employee> employees=new ArrayList<>();
+        List<Employee> employees = new ArrayList<>();
         employees.add(employee);
         return employees;
     }
 
-    default void save(Employee employee){
-        //todo dodanie pracownika do repozytorium
-    }
+    void save(Employee employee);
 }

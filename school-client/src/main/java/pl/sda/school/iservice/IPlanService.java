@@ -17,7 +17,5 @@ public interface IPlanService {
         return plans;
     }
 
-    default void save(Plan plan) {
-        //todo dodanie planu do repozytorium
-    }
+    void save(Plan plan);
 }

@@ -16,7 +16,5 @@ public interface IStudentService {
         return students;
     }
 
-    default void save(Student student) {
-        //todo dodanie studenta do repozytorium
-    }
+    void save(Student student);
 }

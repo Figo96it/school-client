@@ -22,7 +22,5 @@ public interface IParentService {
         return parents;
     }
 
-    default void save(Parent parent) {
-        //todo dodanie rodzica do repozytorium
-    }
+    void save(Parent parent);
 }
