@@ -29,13 +29,13 @@ public class SchoolParentsController {
     }
 
     @PostMapping("parent/add")
-    public String addStudent(@ModelAttribute Parent parent) {
+    public String addParent(@ModelAttribute Parent parent) {
         parentService.save(parent);
         return "redirect:/";
     }
 
     @GetMapping("parent/add")
-    public String addStudentView(Model model) {
+    public String addParentsView(Model model) {
         model.addAttribute("parent", new Parent());
         return "addParent";
     }

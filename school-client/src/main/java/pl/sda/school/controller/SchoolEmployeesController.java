@@ -23,19 +23,19 @@ public class SchoolEmployeesController {
     }
 
     @RequestMapping("employees/list")
-    public String listStudentsGradesView(Model model) {
+    public String listEmployeesView(Model model) {
         model.addAttribute("employees", employeeService.findAll());
         return "employeesList";
     }
 
     @PostMapping("employee/add")
-    public String addStudent(@ModelAttribute Employee employee) {
+    public String addEmployee(@ModelAttribute Employee employee) {
         employeeService.save(employee);
         return "redirect:/";
     }
 
     @GetMapping("employee/add")
-    public String addStudentView(Model model) {
+    public String addEmployeeView(Model model) {
         model.addAttribute("employee", new Employee());
         return "addEmployee";
     }
