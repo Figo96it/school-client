@@ -22,7 +22,7 @@ public class ParentsController {
         this.parentService = parentsService;
     }
 
-    @RequestMapping("parents/list")
+    @RequestMapping("parent/list")
     public String listParentsView(Model model) {
         model.addAttribute("parents", parentService.findAll());
         return "parentsList";

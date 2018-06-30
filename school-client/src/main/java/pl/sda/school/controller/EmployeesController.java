@@ -21,7 +21,7 @@ public class EmployeesController {
         this.employeeService = employeeService;
     }
 
-    @RequestMapping("employees/list")
+    @RequestMapping("employee/list")
     public String listEmployeesView(Model model) {
         model.addAttribute("employees", employeeService.findAll());
         return "employeesList";

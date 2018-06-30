@@ -19,7 +19,7 @@ public class StudentsController {
         this.studentService = studentService;
     }
 
-    @RequestMapping("students/list")
+    @RequestMapping("student/list")
     public String listStudentsView(Model model) {
         model.addAttribute("students", studentService.findAll());
         return "studentsList";

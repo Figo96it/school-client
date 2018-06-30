@@ -22,7 +22,7 @@ public class StudentsGradesController {
         this.studentGradeService = studentGradeService;
     }
 
-    @RequestMapping("students/grades/list")
+    @RequestMapping("student/grade/list")
     public String listStudentsGradesView(Model model) {
         model.addAttribute("studentGrades", studentGradeService.findAll());
         return "studentsGradesList";

@@ -20,7 +20,7 @@ public class ClassController {
         this.classService = classService;
     }
 
-    @RequestMapping("classes/list")
+    @RequestMapping("classroom/list")
     public String listClassView(Model model) {
         model.addAttribute("classes", classService.findAll());
         return "classesList";
