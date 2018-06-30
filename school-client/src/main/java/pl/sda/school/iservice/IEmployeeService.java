@@ -21,6 +21,6 @@ public interface IEmployeeService {
     }
 
     default void save(Employee employee){
-        //todo dodanie studenta do repozytorium
+        //todo dodanie pracownika do repozytorium
     }
 }

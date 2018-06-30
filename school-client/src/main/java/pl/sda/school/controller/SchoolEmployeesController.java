@@ -36,9 +36,6 @@ public class SchoolEmployeesController {
 
     @GetMapping("employee/add")
     public String addStudentView(Model model) {
-        //todo uzyj studentservic
-//        List<Employee> employees=employeeService.findAll();
-//        model.addAttribute("employee", employees);
         model.addAttribute("employee",new Employee());
         return "addEmployee";
     }

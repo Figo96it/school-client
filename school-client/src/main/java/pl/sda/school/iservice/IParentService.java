@@ -22,6 +22,6 @@ public interface IParentService {
     }
 
     default void save(Parent parent){
-        //todo dodanie studenta do repozytorium
+        //todo dodanie rodzica do repozytorium
     }
 }

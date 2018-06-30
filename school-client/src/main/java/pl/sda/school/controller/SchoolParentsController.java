@@ -36,7 +36,6 @@ public class SchoolParentsController {
 
     @GetMapping("parent/add")
     public String addStudentView(Model model) {
-        //todo uzyj studentservic
         model.addAttribute("parent",new Parent());
         return "addParent";
     }

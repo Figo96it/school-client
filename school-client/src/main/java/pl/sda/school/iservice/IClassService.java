@@ -18,6 +18,6 @@ public interface IClassService {
     }
 
     default void save(Classroom Classroom){
-        //tdo
+        //todo dodanie klasy do repozytorium
     }
 }

@@ -36,7 +36,6 @@ public class SchoolStudentsGradesController {
 
     @GetMapping("student/grade/add")
     public String addStudentGradeView(Model model) {
-        //todo uzyj studentservic
         model.addAttribute("studentGrade",new StudentGrade());
         return "addStudentGrade";
     }

@@ -35,7 +35,6 @@ public class SchoolClassController {
 
     @GetMapping("classroom/add")
     public String addClassroomView(Model model) {
-        //todo uzyj studentservic
         model.addAttribute("classroom", new Classroom());
         return "addClass";
     }
