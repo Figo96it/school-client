@@ -47,12 +47,12 @@
             <input type="number" th:class="form-control" th:field="*{id}" />
         </div>
         <div class="form-group">
-            <label th:for="idStudent" th:text="idStudent"></label>
-            <input type="number" th:class="form-control" th:field="*{idStudent}" />
+            <label th:for="Student" th:text="Student"></label>
+            <input type="number" th:class="form-control" th:field="*{student}" />
         </div>
         <div class="form-group">
-            <label th:for="idGrade" th:text="idGrade"></label>
-            <input type="text" th:class="form-control" th:id="idGrade" th:name="idGrade" th:field="*{idGrade}" />
+            <label th:for="Grade" th:text="Grade"></label>
+            <input type="text" th:class="form-control" th:id="Grade" th:name="Grade" th:field="*{grade}" />
         </div>
         <div th:align="center">
             <a th:href="@{~/parents/list}">

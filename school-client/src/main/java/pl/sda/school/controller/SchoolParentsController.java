@@ -37,8 +37,6 @@ public class SchoolParentsController {
     @GetMapping("parent/add")
     public String addStudentView(Model model) {
         //todo uzyj studentservic
-        List<Parent> parent=parentService.findAll();
-        model.addAttribute("parent", parent);
         model.addAttribute("parent",new Parent());
         return "addParent";
     }

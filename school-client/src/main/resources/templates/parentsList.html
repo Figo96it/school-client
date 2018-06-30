@@ -42,13 +42,21 @@
             <th scope="col">ID</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
+            <th scope="col">Student</th>
+            <th scope="col">Mobile Phone Number</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Mail</th>
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="student : ${students}">
-            <td th:text="${student.id}"></td>
-            <td th:text="${student.firstName}"></td>
-            <td th:text="${student.lastName}"></td>
+        <tr scope="row" th:each="parents : ${parent}">
+            <td th:text="${parents.id}"></td>
+            <td th:text="${parents.firstName}"></td>
+            <td th:text="${parents.lastName}"></td>
+            <td th:text="${parents.student}"></td>
+            <td th:text="${parents.mobilePhoneNumber}"></td>
+            <td th:text="${parents.tellNumber}"></td>
+            <td th:text="${parents.mail}"></td>
         </tr>
         </tbody>
     </table>
