@@ -1,7 +1,6 @@
 package pl.sda.school.controller;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,12 +12,12 @@ import pl.sda.AppController;
 import pl.sda.model.StudentGrade;
 import pl.sda.school.iservice.IStudentGradeService;
 
-import java.util.List;
+import static org.slf4j.LoggerFactory.getLogger;
 
 @Controller
 public class StudentsGradesController {
 
-    static final Logger logger = LoggerFactory.getLogger(AppController.class);
+    private static final Logger logger = getLogger(AppController.class);
     private IStudentGradeService studentGradeService;
 
     @Autowired
@@ -45,5 +44,4 @@ public class StudentsGradesController {
         model.addAttribute("studentGrade", new StudentGrade());
         return "addStudentGrade";
     }
-
 }
