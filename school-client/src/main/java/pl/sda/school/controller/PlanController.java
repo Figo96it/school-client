@@ -18,7 +18,6 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class PlanController {
 
     private static final Logger logger = getLogger(AppController.class);
-
     private IPlanService planService;
 
     @Autowired

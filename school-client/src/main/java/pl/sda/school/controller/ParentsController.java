@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.AppController;
 import pl.sda.model.Parent;
-import pl.sda.school.iservice.IParentService;
+import pl.sda.school.service.ParentService;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -18,12 +18,13 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class ParentsController {
 
     private static final Logger logger = getLogger(AppController.class);
-    private IParentService parentService;
+    private ParentService parentService;
 
     @Autowired
-    public ParentsController(IParentService parentsService) {
-        this.parentService = parentsService;
+    public ParentsController(ParentService parentService) {
+        this.parentService = parentService;
     }
+
 
     @RequestMapping("parent/list")
     public String listParentsView(Model model) {

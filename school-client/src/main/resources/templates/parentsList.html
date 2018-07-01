@@ -49,14 +49,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="parents : ${parent}">
-            <td th:text="${parents.id}"></td>
-            <td th:text="${parents.firstName}"></td>
-            <td th:text="${parents.lastName}"></td>
-            <td th:text="${parents.student}"></td>
-            <td th:text="${parents.mobilePhoneNumber}"></td>
-            <td th:text="${parents.tellNumber}"></td>
-            <td th:text="${parents.mail}"></td>
+        <tr scope="row" th:each="parent : ${parents}">
+            <td th:text="${parent.id}"></td>
+            <td th:text="${parent.firstName}"></td>
+            <td th:text="${parent.surname}"></td>
+            <td th:text="${parent.student.studentId}"></td>
+            <td th:text="${parent.mobilePhoneNumber}"></td>
+            <td th:text="${parent.tellNumber}"></td>
+            <td th:text="${parent.mail}"></td>
         </tr>
         </tbody>
     </table>
