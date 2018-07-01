@@ -1,39 +1,43 @@
 <!DOCTYPE HTML>
-        <html xmlns:th="http://www.thymeleaf.org">
-        <head>
-            <title>Spring Boot Thymeleaf Hello World Example</title>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>School</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-            <link rel="stylesheet" type="text/css"
-                  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <meta http-equiv="Content-Language" content="pl">
+
+
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
     <link rel="stylesheet" th:href="@{/css/main.css}"
-          href="../../css/main.css" />
-
+          href="../../css/main.css"/>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" th:href="@{welcome}">School</a>
+            <a class="navbar-brand" th:href="@{~/}">School</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="@{welcome}">Home</a></li>
-                <li><a href="#about">About</a></li><li><a href="#login">Log in</a></li>
+                <li class="active"><a th:href="@{~/}">Home</a></li>
+                <li><a th:href="@{~/employees/list}">Personel</a></li>
+                <li><a th:href="@{~/students/grades/list}">Student Grades</a></li>
+                <li><a href="#personalData">Personal Data</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-        <div class="container">
+<div class="container">
 
-            <div th:class="starter-template">
-                <h1>Spring Boot Web Thymeleaf Example</h1>
-                <h2>
-                    <span th:text="'Message: ' + ${message}"></span>
-                </h2>
+    <div th:class="starter-template">
+        <h1>School project made by the SDA students</h1>
+        <h2>
+            <span th:text="'Message: ' + ${message}"></span>
+        </h2>
     </div>
 </div>
 <!-- /.container -->
@@ -42,5 +46,94 @@
 <script type="text/javascript"
         src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
 
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+
+        <col width="30">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+        </tr>
+        </thead>
+        <div>
+
+            <tr>
+                <th scope="row">1</th>
+                <td>Konrad</td>
+                <td>Bartczak</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Michal</td>
+                <td>Borkowski</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Robert</td>
+                <td>Chwalowski</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Damian</td>
+                <td>Figinski</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Szymon</td>
+                <td>Fornalczyk</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>Damian</td>
+                <td>Futyma</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>Lukasz</td>
+                <td>Haladaj</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>Lukasz</td>
+                <td>Komorowski</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>Tomasz</td>
+                <td>Krakowiak</td>
+            </tr>
+            <tr>
+                <th scope="row">10</th>
+                <td>Michal</td>
+                <td>Polewczyk</td>
+            </tr>
+            <tr>
+                <th scope="row">11</th>
+                <td>Blazej</td>
+                <td>Skowronski</td>
+            </tr>
+            <tr>
+                <th scope="row">12</th>
+                <td>Marcin</td>
+                <td>Stus</td>
+            </tr>
+
+            <tr>
+                <th scope="row">13</th>
+                <td>Alicja</td>
+                <td>Wypych</td>
+            </tr>
+            <tr>
+                <th scope="row">14</th>
+                <td>Sebastian</td>
+                <td>Zalewski</td>
+            </tr>
+        </div>
+
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
