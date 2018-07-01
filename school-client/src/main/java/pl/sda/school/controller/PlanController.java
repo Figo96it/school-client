@@ -17,7 +17,7 @@ import pl.sda.school.iservice.IPlanService;
 public class PlanController {
 
 
-    private static final Logger logger = LoggerFactory.getLogger(AppController.class);
+    static final Logger logger = LoggerFactory.getLogger(AppController.class);
     private IPlanService planService;
 
     @Autowired

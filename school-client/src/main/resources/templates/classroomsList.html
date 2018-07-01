@@ -43,16 +43,16 @@
             <th scope="col">School ID</th>
             <th scope="col">Class Name</th>
             <th scope="col">Class Year</th>
-            <th scope="col">Form ID</th>
+            <th scope="col">Form Tutor</th>
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="class : ${classroom}">
-            <td th:text="${class.id}"></td>
-            <td th:text="${class.idSchool}"></td>
-            <td th:text="${class.className}"></td>
-            <td th:text="${class.year}"></td>
-            <td th:text="${class.formTutor}"></td>
+        <tr scope="row" th:each="classroom : ${classroom}">
+            <td th:text="${classroom.id}"></td>
+            <td th:text="${classroom.school.id}"></td>
+            <td th:text="${classroom.className}"></td>
+            <td th:text="${classroom.year}"></td>
+            <td th:text="${classroom.formTutor.firstName}+${classroom.formTutor.lastName}"></td>
         </tr>
         </tbody>
     </table>

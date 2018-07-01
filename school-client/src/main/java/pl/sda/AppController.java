@@ -11,16 +11,16 @@ import java.util.Map;
 @Controller
 public class AppController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppController.class);
+    static final Logger logger = LoggerFactory.getLogger(AppController.class);
 
     @Value("${welcome.message:test}")
-    private String message = "Hello World";
+    private String message;
 
     @RequestMapping("/")
     public String welcome(Map<String, Object> model) {
-        logger.debug("Welcome {}", "test");
+        logger.debug("Welcome {}", "test"+message);
         model.put("message", this.message);
-        return "welcome";
+        return "studentLogged";
     }
 
 }

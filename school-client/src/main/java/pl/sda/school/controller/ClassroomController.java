@@ -11,24 +11,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.AppController;
 import pl.sda.model.Classroom;
-import pl.sda.school.iservice.IClassService;
+import pl.sda.school.service.ClassService;
 
 @Controller
 public class ClassroomController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppController.class);
-    private IClassService classService;
+    static final Logger logger = LoggerFactory.getLogger(AppController.class);
+    private ClassService classService;
 
     @Autowired
-    public ClassroomController(IClassService classService) {
+    public ClassroomController(ClassService classService) {
         this.classService = classService;
     }
+
 
     @RequestMapping("classroom/list")
     public String listClassView(Model model) {
         logger.debug("View classrooms list");
-        model.addAttribute("classes", classService.findAll());
-        return "classesList";
+        model.addAttribute("classroom", classService.findAll());
+        return "classroomsList";
     }
 
     @PostMapping("classroom/add")
@@ -41,6 +42,6 @@ public class ClassroomController {
     public String addClassroomView(Model model) {
         logger.debug("Add classroom");
         model.addAttribute("classroom", new Classroom());
-        return "addClass";
+        return "addClassroom";
     }
 }

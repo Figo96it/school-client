@@ -7,17 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface IEmployeeService {
-    default List<Employee> findAll() {
-        Employee employee = new Employee();
-        employee.setId(3);
-        employee.setFirstName("Kamil");
-        employee.setLastName("Urbaniak");
-        employee.setPosition("Director");
-        employee.setClassroom(new Classroom());
-        List<Employee> employees = new ArrayList<>();
-        employees.add(employee);
-        return employees;
-    }
-
+    List<Employee> findAll();
     void save(Employee employee);
 }

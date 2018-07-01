@@ -8,24 +8,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.sda.AppController;
 import pl.sda.model.Student;
-import pl.sda.school.iservice.IStudentService;
-
-import java.util.List;
+import pl.sda.school.service.StudentService;
 
 @Controller
 public class StudentsController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppController.class);
-    private IStudentService studentService;
+    static final Logger logger = LoggerFactory.getLogger(AppController.class);
+    private StudentService studentService;
 
     @Autowired
-    public StudentsController(IStudentService studentService) {
+    public StudentsController(StudentService studentService) {
         this.studentService = studentService;
     }
 
     @RequestMapping("student/list")
     public String listStudentsView(Model model) {
-        logger.debug("View students list");
+        logger.debug("View student list");
         model.addAttribute("students", studentService.findAll());
         return "studentsList";
     }

@@ -17,7 +17,7 @@ import pl.sda.school.iservice.IEmployeeService;
 @Controller
 public class EmployeesController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppController.class);
+    static final Logger logger = LoggerFactory.getLogger(AppController.class);
     private IEmployeeService employeeService;
 
     @Autowired

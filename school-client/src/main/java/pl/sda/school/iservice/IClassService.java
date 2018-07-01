@@ -10,12 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface IClassService {
-    default List<Classroom> findAll() {
-        Classroom clas = new Classroom(1, new School(1, "aa", "bb"), "Science", 2012, new Employee());
-        List<Classroom> classes = new ArrayList<>();
-        classes.add(clas);
-        return classes;
-    }
-
+    List<Classroom> findAll();
     void save(Classroom Classroom);
 }

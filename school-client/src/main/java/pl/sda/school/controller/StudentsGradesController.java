@@ -18,7 +18,7 @@ import java.util.List;
 @Controller
 public class StudentsGradesController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppController.class);
+    static final Logger logger = LoggerFactory.getLogger(AppController.class);
     private IStudentGradeService studentGradeService;
 
     @Autowired

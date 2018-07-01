@@ -18,7 +18,7 @@ import java.util.List;
 @Controller
 public class ParentsController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppController.class);
+    static final Logger logger = LoggerFactory.getLogger(AppController.class);
     private IParentService parentService;
 
     @Autowired
