@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+
+
+    <meta charset="utf-8" name="viewport” content=“width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <!--<link rel="stylesheet" th:href="@{/css/main.css}"-->
+    <!--href="../aaa/main.css"/>-->
+
+    <script type="text/javascript"
+            src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{~/}">School</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a th:href="@{~/}">Home</a></li>
+                <li><a th:href="@{~/employees/list}">Personel</a></li>
+                <li><a th:href="@{~/students/grades/list}">Student Grades</a></li>
+                <li><a href="#personalData">Personal Data</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <form th:action="@{/login}" method="post">
+        <div class="form-group">
+            <label for="exampleInputId">ID </label>
+            <input type="id" class="form-control" id="exampleInputId" placeholder="Enter ID" for="${LoginId}">
+        </div>
+        <div class=" form-group">
+            <label for="exampleInputPass">Password</label>
+            <input type="password" class="form-control" id="exampleInputPass" placeholder="Enter Password"
+                   for="${Password}">
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+</body>
+</html>
