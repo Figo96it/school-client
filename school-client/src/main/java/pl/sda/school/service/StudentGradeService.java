@@ -37,7 +37,7 @@ public class StudentGradeService implements IStudentGradeService {
     @Override
     public List<StudentGrade> findAll() {
         List<StudentGrade> studentGradesList = new ArrayList<>();
-        String STUDENT_GRADE_URL = address + port + "/plan/findAll";
+        String STUDENT_GRADE_URL = address + port + "/student/grade/findAll";
 
         try {
             logger.debug(STUDENT_GRADE_URL);

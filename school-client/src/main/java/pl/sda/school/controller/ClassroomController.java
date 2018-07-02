@@ -26,7 +26,7 @@ public class ClassroomController {
     }
 
     @RequestMapping("classroom/list")
-    public String listClassView(Model model) {
+    public String listClassroomView(Model model) {
         logger.debug("View classrooms list");
         model.addAttribute("classes", classService.findAll());
         return "classroomsList";

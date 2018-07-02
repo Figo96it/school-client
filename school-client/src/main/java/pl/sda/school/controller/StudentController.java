@@ -15,13 +15,13 @@ import pl.sda.school.service.StudentService;
 import static org.slf4j.LoggerFactory.getLogger;
 
 @Controller
-public class StudentsController {
+public class StudentController {
 
     private static final Logger logger = getLogger(AppController.class);
     private StudentService studentService;
 
     @Autowired
-    public StudentsController(StudentService studentService) {
+    public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
 

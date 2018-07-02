@@ -40,17 +40,15 @@
         <thead class="thead-dark">
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Student First Name</th>
-            <th scope="col">Student Last Name</th>
-            <th scope="col">Grade</th>
+            <th scope="col">Subject Name</th>
+            <th scope="col">Plan</th>
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="studentGrade : ${studentGrades}">
-            <td th:text="${studentGrade.id}"></td>
-            <td th:text="${studentGrade.student.firstName}"></td>
-            <td th:text="${studentGrade.student.lastName}"></td>
-            <td th:text="${studentGrade.grade}"></td>
+        <tr scope="row" th:each="subject : ${subjects}">
+            <td th:text="${subject.id}"></td>
+            <td th:text="${subject.subjectName}"></td>
+            <td th:text="${subject.plan.id}"></td>
         </tr>
         </tbody>
     </table>
