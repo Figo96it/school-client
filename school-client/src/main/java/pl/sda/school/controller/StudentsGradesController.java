@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.AppController;
 import pl.sda.model.StudentGrade;
-import pl.sda.school.iservice.IStudentGradeService;
+import pl.sda.school.service.StudentGradeService;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -18,10 +18,10 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class StudentsGradesController {
 
     private static final Logger logger = getLogger(AppController.class);
-    private IStudentGradeService studentGradeService;
+    private StudentGradeService studentGradeService;
 
     @Autowired
-    public StudentsGradesController(IStudentGradeService studentGradeService) {
+    public StudentsGradesController(StudentGradeService studentGradeService) {
         this.studentGradeService = studentGradeService;
     }
 

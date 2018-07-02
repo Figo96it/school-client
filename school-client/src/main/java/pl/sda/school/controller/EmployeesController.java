@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.AppController;
 import pl.sda.model.Employee;
-import pl.sda.school.iservice.IEmployeeService;
+import pl.sda.school.service.EmployeeService;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -19,10 +19,10 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class EmployeesController {
 
     private static final Logger logger = getLogger(AppController.class);
-    private IEmployeeService employeeService;
+    private EmployeeService employeeService;
 
     @Autowired
-    public EmployeesController(IEmployeeService employeeService) {
+    public EmployeesController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 

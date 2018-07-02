@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sda.AppController;
 import pl.sda.model.Plan;
-import pl.sda.school.iservice.IPlanService;
+import pl.sda.school.service.PlanService;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -18,10 +18,10 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class PlanController {
 
     private static final Logger logger = getLogger(AppController.class);
-    private IPlanService planService;
+    private PlanService planService;
 
     @Autowired
-    public PlanController(IPlanService planService) {
+    public PlanController(PlanService planService) {
         this.planService = planService;
     }
 
