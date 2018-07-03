@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.sda.AppController;
 import pl.sda.model.Subject;
 import pl.sda.school.service.SubjectService;
@@ -26,10 +23,26 @@ public class SubjectController {
     }
 
     @RequestMapping("subject/list")
-    public String listSchoolView(Model model) {
+    public String listSubjectView(Model model) {
         logger.debug("View subject list");
         model.addAttribute("subjects", subjectService.findAll());
         return "subjectsList";
+    }
+
+    @GetMapping("subject/list/id/{id}")
+    public String findSubjectById(Model model, @PathVariable String id) {
+        logger.debug("Add student");
+        model.addAttribute("subject", subjectService.findSubjectById(Integer.valueOf(id)));
+        logger.info(String.valueOf(subjectService.findSubjectById(Integer.valueOf(id))));
+        return "subjectInformation";
+    }
+
+    @GetMapping("subject/list/name/{subjectName}")
+    public String findSubjectsByNameSubject(Model model, @PathVariable String subjectName) {
+        logger.debug("Add student");
+        model.addAttribute("subject", subjectService.findSubjectsByNameSubject(subjectName));
+        logger.info(String.valueOf(subjectService.findSubjectsByNameSubject(subjectName)));
+        return "subjectInformation";
     }
 
     @PostMapping("subject/add")

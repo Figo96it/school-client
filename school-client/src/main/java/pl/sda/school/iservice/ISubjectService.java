@@ -8,4 +8,8 @@ public interface ISubjectService {
     List<Subject> findAll();
 
     void save(Subject subject);
+
+    Subject findSubjectsByNameSubject(String subjectName);
+
+    Subject findSubjectById(Integer id);
 }

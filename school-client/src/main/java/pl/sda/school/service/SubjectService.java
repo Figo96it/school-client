@@ -11,9 +11,7 @@ import pl.sda.AppController;
 import pl.sda.model.Subject;
 import pl.sda.school.iservice.ISubjectService;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -57,5 +55,41 @@ public class SubjectService implements ISubjectService{
     @Override
     public void save(Subject subject) {
 
+    }
+
+    @Override
+    public Subject findSubjectsByNameSubject(String subjectName) {
+        Subject subject = new Subject();
+        Map<String, String> params = new HashMap<>();
+        String SUBJECT_BY_SUBJECT_NAME_URL = address + port + "/subject/find/name/{subjectName}";
+        params.put("subjectName", subjectName);
+
+        try {
+            logger.debug(SUBJECT_BY_SUBJECT_NAME_URL);
+            subject = restTemplate.getForObject(SUBJECT_BY_SUBJECT_NAME_URL, Subject.class, params);
+            logger.info(subject.toString());
+            return subject;
+        } catch (HttpClientErrorException e) {
+            logger.error(String.valueOf(e));
+        }
+        return subject;
+    }
+
+    @Override
+    public Subject findSubjectById(Integer id) {
+        Subject subject = new Subject();
+        Map<String, String> params = new HashMap<>();
+        String SUBJECT_BY_ID_URL = address + port + "/subject/find/id/{id}";
+        params.put("id", id.toString());
+
+        try {
+            logger.debug(SUBJECT_BY_ID_URL);
+            subject = restTemplate.getForObject(SUBJECT_BY_ID_URL, Subject.class, params);
+            logger.info(subject.toString());
+            return subject;
+        } catch (HttpClientErrorException e) {
+            logger.error(String.valueOf(e));
+        }
+        return subject;
     }
 }
