@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.sda.AppController;
 import pl.sda.model.Student;
 import pl.sda.school.service.StudentService;
@@ -29,6 +26,30 @@ public class StudentController {
     public String listStudentsView(Model model) {
         logger.debug("View student list");
         model.addAttribute("students", studentService.findAll());
+        return "studentsList";
+    }
+
+    @GetMapping("student/list/id/{id}")
+    public String findStudentById(Model model, @PathVariable String id) {
+        logger.debug("Add student");
+        model.addAttribute("student", studentService.findStudentById(Integer.valueOf(id)));
+        logger.info(String.valueOf(studentService.findStudentById(Integer.valueOf(id))));
+        return "studentPersonalData";
+    }
+
+    @GetMapping("student/list/name/{firstName}")
+    public String findStudentsByFirstName(Model model, @PathVariable String firstName) {
+        logger.debug("Add student");
+        model.addAttribute("students", studentService.findStudentsByFirstName(firstName));
+        logger.info(String.valueOf(studentService.findStudentsByFirstName(firstName)));
+        return "studentsList";
+    }
+
+    @GetMapping("student/list/surname/{lastName}")
+    public String findStudentsByLastName(Model model, @PathVariable String lastName) {
+        logger.debug("Find student by LastName");
+        model.addAttribute("students", studentService.findStudentsByLastName(lastName));
+        logger.info(String.valueOf(studentService.findStudentsByLastName(lastName)));
         return "studentsList";
     }
 

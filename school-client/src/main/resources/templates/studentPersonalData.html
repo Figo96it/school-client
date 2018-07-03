@@ -35,21 +35,29 @@
         </div>
     </div>
 </nav>
-
+<div class="starter-template" th:align="center">
+    <h1>Student Personal Data</h1>
+</div>
 <div class="container">
     <table class="table">
         <thead class="thead-dark">
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Class Room</th>
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="school : ${schools}">
-            <td th:text="${school.id}"></td>
-            <td th:text="${school.name}"></td>
-            <td th:text="${school.address}"></td>
+        <tr scope="row" th:object="${student}">
+            <td th:text="${student.studentId}"></td>
+            <td th:text="${student.firstName}"></td>
+            <td th:text="${student.lastName}"></td>
+            <td th:text="${student.classroom.className}"></td>
+            <td th:text="${student.classroom.className}"></td>
+            <td th:text="${student.classroom.className}"></td>
+            <td th:text="${student.classroom.className}"></td>
+            <td th:text="${student.classroom.className}"></td>
         </tr>
         </tbody>
     </table>
