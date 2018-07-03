@@ -31,7 +31,7 @@ public class SubjectController {
 
     @GetMapping("subject/list/id/{id}")
     public String findSubjectById(Model model, @PathVariable String id) {
-        logger.debug("Add student");
+        logger.debug("Find subject by id");
         model.addAttribute("subject", subjectService.findSubjectById(Integer.valueOf(id)));
         logger.info(String.valueOf(subjectService.findSubjectById(Integer.valueOf(id))));
         return "subjectInformation";
@@ -39,7 +39,7 @@ public class SubjectController {
 
     @GetMapping("subject/list/name/{subjectName}")
     public String findSubjectsByNameSubject(Model model, @PathVariable String subjectName) {
-        logger.debug("Add student");
+        logger.debug("Find subject by subject name");
         model.addAttribute("subject", subjectService.findSubjectsByNameSubject(subjectName));
         logger.info(String.valueOf(subjectService.findSubjectsByNameSubject(subjectName)));
         return "subjectInformation";

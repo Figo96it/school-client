@@ -13,13 +13,13 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 
 @Controller
-public class EmployeesController {
+public class EmployeeController {
 
     private static final Logger logger = getLogger(AppController.class);
     private EmployeeService employeeService;
 
     @Autowired
-    public EmployeesController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -48,7 +48,7 @@ public class EmployeesController {
 
     @GetMapping("employee/list/surname/{lastName}")
     public String findEmployeesByLastName(Model model, @PathVariable String lastName) {
-        logger.debug("Find employee by LastName");
+        logger.debug("Find employee by Last Name");
         model.addAttribute("employees", employeeService.findEmployeesByLastName(lastName));
         logger.info(String.valueOf(employeeService.findEmployeesByLastName(lastName)));
         return "employeesList";

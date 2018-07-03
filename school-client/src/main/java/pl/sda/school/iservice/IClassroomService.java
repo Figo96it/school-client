@@ -5,8 +5,12 @@ import pl.sda.model.Classroom;
 
 import java.util.List;
 
-public interface IClassService {
+public interface IClassroomService {
     List<Classroom> findAll();
 
     void save(Classroom Classroom);
+
+    Classroom findClassroomById(Integer id);
+
+    Classroom findClassroomsByClassroomName(String className);
 }

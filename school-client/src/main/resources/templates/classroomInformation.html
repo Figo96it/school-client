@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Classrooms List</title>
+    <title>Classroom Information</title>
 
 
     <meta charset="utf-8" name="viewport” content=“width=device-width, initial-scale=1"/>
@@ -10,7 +10,7 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
     <script type="text/javascript"
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+            src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
     <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
@@ -32,24 +32,23 @@
         </div>
     </div>
 </nav>
+<div class="starter-template" th:align="center">
+    <h1>Classroom Information</h1>
+</div>
 <div class="container">
     <table class="table">
         <thead class="thead-dark">
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">School ID</th>
             <th scope="col">Class Name</th>
-            <th scope="col">Class Year</th>
-            <th scope="col">Form Tutor</th>
+            <th scope="col">Year</th>
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="classroom : ${classrooms}">
+        <tr scope="row" th:object="${classroom}">
             <td th:text="${classroom.id}"></td>
-            <td th:text="${classroom.school.id}"></td>
             <td th:text="${classroom.className}"></td>
             <td th:text="${classroom.year}"></td>
-            <td th:text="${classroom.formTutor.firstName}"></td>
         </tr>
         </tbody>
     </table>

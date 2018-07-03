@@ -31,7 +31,7 @@ public class StudentController {
 
     @GetMapping("student/list/id/{id}")
     public String findStudentById(Model model, @PathVariable String id) {
-        logger.debug("Add student");
+        logger.debug("Find student by id");
         model.addAttribute("student", studentService.findStudentById(Integer.valueOf(id)));
         logger.info(String.valueOf(studentService.findStudentById(Integer.valueOf(id))));
         return "studentPersonalData";
@@ -39,7 +39,7 @@ public class StudentController {
 
     @GetMapping("student/list/name/{firstName}")
     public String findStudentsByFirstName(Model model, @PathVariable String firstName) {
-        logger.debug("Add student");
+        logger.debug("Find student by first name");
         model.addAttribute("students", studentService.findStudentsByFirstName(firstName));
         logger.info(String.valueOf(studentService.findStudentsByFirstName(firstName)));
         return "studentsList";
