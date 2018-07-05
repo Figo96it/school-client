@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Students List</title>
+    <title>Student Personal Data</title>
 
 
     <meta charset="utf-8" name="viewport” content=“width=device-width, initial-scale=1"/>
@@ -32,7 +32,9 @@
         </div>
     </div>
 </nav>
-
+<div class="starter-template" th:align="center">
+    <h1>Student Personal Data</h1>
+</div>
 <div class="container">
     <table class="table">
         <thead class="thead-dark">
@@ -44,7 +46,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="student : ${students}">
+        <tr scope="row" th:object="${student}">
             <td th:text="${student.studentId}"></td>
             <td th:text="${student.firstName}"></td>
             <td th:text="${student.lastName}"></td>

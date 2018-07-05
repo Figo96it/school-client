@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import pl.sda.AppController;
-import pl.sda.model.Plan;
-import pl.sda.school.iservice.IPlanService;
+import pl.sda.model.Grade;
+import pl.sda.school.iservice.IGradeService;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,44 +18,44 @@ import java.util.List;
 import static org.slf4j.LoggerFactory.getLogger;
 
 @Service
-public class PlanService implements IPlanService {
+public class GradeService implements IGradeService {
 
     private static final Logger logger = getLogger(AppController.class);
     private RestTemplate restTemplate;
 
-    @Value("${school.server.address}")
-    private String address;
-
     @Value("${school.server.port}")
     private String port;
 
+    @Value("${school.server.address}")
+    private String address;
+
     @Autowired
-    public PlanService(RestTemplate restTemplate) {
+    public GradeService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
     @Override
-    public List<Plan> findAll() {
-        List<Plan> planList = new ArrayList<>();
-        String PLAN_URL = address + port + "/plan/findAll";
+    public List<Grade> findAll() {
+        List<Grade> gradeList = new ArrayList<>();
+        String GRADE_URL = address + port + "/grade/findAll";
 
         try {
-            logger.debug(PLAN_URL);
-            ResponseEntity<Plan[]> plans = restTemplate.getForEntity(PLAN_URL, Plan[].class);
-            logger.info(plans.toString());
-            if (plans.getBody() != null && plans.getBody().length != 0) {
-                Plan[] plan = plans.getBody();
-                Collections.addAll(planList, plan);
+            logger.debug(GRADE_URL);
+            ResponseEntity<Grade[]> grades = restTemplate.getForEntity(GRADE_URL, Grade[].class);
+            logger.info(grades.toString());
+            if (grades.getBody() != null && grades.getBody().length != 0) {
+                Grade[] grade = grades.getBody();
+                Collections.addAll(gradeList, grade);
             }
-            return planList;
+            return gradeList;
         } catch (HttpClientErrorException e) {
             logger.error(String.valueOf(e));
         }
-        return planList;
+        return gradeList;
     }
 
     @Override
-    public void save(Plan plan) {
-        //todo add Plan to repository
+    public void save(Grade grade) {
+
     }
 }

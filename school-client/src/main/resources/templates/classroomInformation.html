@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Students List</title>
+    <title>Classroom Information</title>
 
 
     <meta charset="utf-8" name="viewport” content=“width=device-width, initial-scale=1"/>
@@ -32,23 +32,23 @@
         </div>
     </div>
 </nav>
-
+<div class="starter-template" th:align="center">
+    <h1>Classroom Information</h1>
+</div>
 <div class="container">
     <table class="table">
         <thead class="thead-dark">
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Class Room</th>
+            <th scope="col">Class Name</th>
+            <th scope="col">Year</th>
         </tr>
         </thead>
         <tbody>
-        <tr scope="row" th:each="student : ${students}">
-            <td th:text="${student.studentId}"></td>
-            <td th:text="${student.firstName}"></td>
-            <td th:text="${student.lastName}"></td>
-            <td th:text="${student.classroom.className}"></td>
+        <tr scope="row" th:object="${classroom}">
+            <td th:text="${classroom.id}"></td>
+            <td th:text="${classroom.className}"></td>
+            <td th:text="${classroom.year}"></td>
         </tr>
         </tbody>
     </table>

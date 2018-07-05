@@ -1,21 +1,12 @@
 package pl.sda.school.iservice;
 
-import pl.sda.model.*;
+import pl.sda.model.Plan;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface IPlanService {
 
-    default List<Plan> findAll() {
-        Plan plan = new Plan();
-        plan.setClassroom(new Classroom());
-        plan.setId(2);
-        plan.setSubjects(new ArrayList<>());
-        List<Plan> plans = new ArrayList<>();
-        plans.add(plan);
-        return plans;
-    }
+    List<Plan> findAll();
 
     void save(Plan plan);
 }

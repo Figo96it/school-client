@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Add Parent</title>
+    <title>Add Classroom</title>
 
 
     <meta charset="utf-8" name="viewport” content=“width=device-width, initial-scale=1"/>
@@ -34,45 +34,38 @@
 </nav>
 
 <div class="starter-template" th:align="center">
-    <h1>Add Parent</h1>
+    <h1>Add Class</h1>
 </div>
 
 <div class="container mt-4">
-    <form th:action="@{/parent/add}" th:object="${parent}" method="post">
+    <form th:action="@{/classroom/add}" th:object="${classroom}" method="post">
         <div class="form-group">
-            <label th:for="parentId" th:text="parentID"></label>
+            <label th:for="employeeId" th:text="employeeID"></label>
             <input type="number" th:class="form-control" th:field="*{id}" />
         </div>
         <div class="form-group">
             <label th:for="firstName" th:text="FirstName"></label>
-            <input type="text" th:class="form-control" th:field="*{firstName}" />
+            <input type="text" th:class="form-control" th:field="*{school}" />
         </div>
         <div class="form-group">
-            <label th:for="lastName" th:text="LastName"></label>
-            <input type="text" th:class="form-control" th:id="lastName" th:name="LastName" th:field="*{surname}" />
+            <label th:for="className" th:text="className"></label>
+            <input type="text" th:class="form-control" th:id="className" th:name="className" th:field="*{className}" />
         </div>
         <div class="form-group">
-            <label th:for="student" th:text="student"></label>
-            <input type="number" th:class="form-control" th:field="*{student}" />
+            <label th:for="year" th:text="year"></label>
+            <input type="text" th:class="form-control" th:id="year" th:name="year" th:field="*{year}" />
         </div>
         <div class="form-group">
-            <label th:for="tellNumber" th:text="tellNumber"></label>
-            <input type="number" th:class="form-control" th:id="tellNumber" th:name="tellNumber" th:field="*{tellNumber}" />
-        </div>
-        <div class="form-group">
-            <label th:for="mail" th:text="mail"></label>
-            <input type="number" th:class="form-control" th:id="mail" th:name="mail" th:field="*{mail}" />
-        </div>
-        <div class="form-group">
-            <label th:for="mobilePhoneNumber" th:text="mobilePhoneNumber"></label>
-            <input type="number" th:class="form-control" th:id="mobilePhoneNumber" th:name="mobilePhoneNumber" th:field="*{mobilePhoneNumber}" />
+            <label th:for="formTutor" th:text="formTutor"></label>
+            <input type="formTutor" th:class="form-control" th:field="*{formTutor}" />
         </div>
         <div th:align="center">
-        <a th:href="@{~/parent/list}">
-            <button type="button" class="btn btn-outline-secondary">Add Parent</button>
-        </a>
+            <a th:href="@{~/classroom/list}">
+                <button type="button" class="btn btn-outline-secondary">Add Class</button>
+            </a>
         </div>
     </form>
 </div>
+
 </body>
 </html>
