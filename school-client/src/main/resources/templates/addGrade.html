@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Add Employee</title>
+    <title>Add Grade</title>
 
 
     <meta charset="utf-8" name="viewport” content=“width=device-width, initial-scale=1"/>
@@ -34,38 +34,29 @@
 </nav>
 
 <div class="starter-template" th:align="center">
-    <h1>Add Employee</h1>
+    <h1>Add Grade</h1>
 </div>
 
 <div class="container mt-4">
-    <form th:action="@{/employee/add}" th:object="${employee}" method="post">
+    <form th:action="@{/grade/add}" th:object="${grade}" method="post">
         <div class="form-group">
-            <label th:for="employeeId" th:text="employeeID"></label>
+            <label th:for="Id" th:text="Id"></label>
             <input type="number" th:class="form-control" th:field="*{id}" />
         </div>
         <div class="form-group">
-            <label th:for="firstName" th:text="FirstName"></label>
-            <input type="text" th:class="form-control" th:field="*{firstName}" />
+            <label th:for="Subject" th:text="Subject"></label>
+            <input type="text" th:class="form-control" th:field="*{subject}" />
         </div>
         <div class="form-group">
-            <label th:for="lastName" th:text="LastName"></label>
-            <input type="text" th:class="form-control" th:id="lastName" th:name="LastName" th:field="*{lastName}" />
-        </div>
-        <div class="form-group">
-            <label th:for="position" th:text="Position"></label>
-            <input type="text" th:class="form-control" th:id="position" th:name="Position" th:field="*{position}" />
-        </div>
-        <div class="form-group">
-            <label th:for="classroom" th:text="classroom"></label>
-            <input type="number" th:class="form-control" th:field="*{classroom}" />
+            <label th:for="Grade" th:text="Grade"></label>
+            <input type="text" th:class="form-control" th:id="Grade" th:name="Grade" th:field="*{grade}" />
         </div>
         <div th:align="center">
-            <a th:href="@{~/employee/list}">
-                <button type="button" class="btn btn-outline-secondary">Add Employee</button>
+            <a th:href="@{~/grade/list}">
+                <button type="button" class="btn btn-outline-secondary">Add Grade</button>
             </a>
         </div>
     </form>
 </div>
-
 </body>
 </html>
